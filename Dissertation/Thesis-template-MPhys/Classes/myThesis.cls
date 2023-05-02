@@ -348,6 +348,7 @@ hyperfigures
 		\begin{picture}({50,25})
 		\put(210,75){\hbox{\@logo}}
 		\end{picture}
+		\vspace{-2.0cm}
 		\begin{center}
 			{ \Huge {\bfseries {\@title}} \par}
 			{\large \vspace*{20mm} {{\@crest} \par} \vspace*{20mm}}
