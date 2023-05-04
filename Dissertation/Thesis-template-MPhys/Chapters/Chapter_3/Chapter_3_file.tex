@@ -29,7 +29,7 @@ In order to construct the Hamiltonian we first need to consider the half filled 
 
 To construct the matrix representation for the Hamiltonian for the XY model \ref{eq:eff_hamiltonian} we simply act the Hamiltonian on each of the basis states and find the respective output. That is the matrix element $\hat{\mathcal{H}}_{ij} = \mel*{i}{\hat{\mathcal{H}}}{j}$ allows us to find the matrix elements for the Hamiltonian. 
 
-\subsubsection{Using Quspin to construct Hamiltonian}
+\subsubsection{Using Quspin to Construct Hamiltonian}
 
 The effective Hamiltonian of the spin $\frac 1 2 $ XY model \ref{eq:eff_hamiltonian} is in that form an integrable model. Therefore in order to observe quantum many body scar effects we must break that integrability. In the paper by Zhang et al.\citep{zhang_many-body_2022} the integrability is broken by the cross coupling terms which come from the physical layout of the device. Therefore it is critical that we add a perturbation to the Hamiltonian such that the integrability is broken. 
 Zhang et al\citep{zhang_many-body_2022} use a next-next-nearest neighbour coupling in order to break the integrability of the system for their numerics, we will later explore the impact of changing this, as well as a stepping function in order to speed up thermalization from random states whilst maintaining the dynamics of the pure dimerized states. \\
@@ -69,5 +69,7 @@ We will use the Schrodinger equation in order to probe the time evolution of the
 After constructing the dynamics of the system we will start by looking at some of the common metrics of QMBS, the first of which is the fidelity or overlap. This is measured between $\ket{\psi(0)}$ and $\ket{\psi(t)}$.
 This is the one of the observables that shows the periodic revival for the QMBS states. The fidelity is calculated as 
 \begin{equation}\label{eq:fidelity}
-\mathcal{F} = |\bra{\psi(0)}\ket{\psi(t)}|^2
+f = |\bra{\psi(0)}\ket{\psi(t)}|^2
 \end{equation}
+This measurement describes the overlap of the initial state and a state at a given time t, for thermalizing states this should rapidly tend towards zero and remain there for long time. However QMBS states show periodic revivals. It is possible to improve these revivals by perturbing the Hamiltonian in a way that.
+

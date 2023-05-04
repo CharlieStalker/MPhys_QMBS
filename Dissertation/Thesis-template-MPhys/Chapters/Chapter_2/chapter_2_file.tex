@@ -14,20 +14,21 @@ One of the key ideas within quantum many-body scaring is the idea that certain i
 \begin{equation}
   \ket{\Psi (t)} = e ^{-i\hat{H}t}\ket{\Psi(0)} = \Sigma_a A_ae^{-iE_nt}\ket{a}
 \end{equation}  
-The expectation value of an operator for a specific time T is given by $\expval*{\hat{O}} = \expval*{\hat{O}}{\Psi(T)}$ and we would expect the infinite time limit of this to approach the values predicted by the microcanonical ensemble
+The expectation value of an operator for a specific time T is given by $\expval*{\hat{O}} = \expval*{\hat{O}}{\Psi(T)}$ and we would expect the infinite time limit of this to approach the values predicted by the microcanonical ensemble \citep{rigol_thermalization_2008}
 \begin{equation}
 \expval*{\hat{O}}_\infty
 = \lim_{T\rightarrow \infty} \frac{1}{T} \int_0^\infty \expval*{\hat{O}}{\Psi(T)} \dd t = \Sigma_a |A_a|^2\expval*{\hat{O}}{a}
 \end{equation}
 Since the infinite time value should be independent of the initial conditions it is reasonable to enforce that $\expval*{\hat{O}}{a}$ agrees with the canonical average since $|A_a|^2$ is dependent on $\ket{\Psi(0)}$. \citep{Abanin2019}
-\\
-The ETH also has significant implications on the entanglement of a many body system, 
+
 
 \section{Ergodicity Breaking}
 \subsection{Strong Ergodicity Breaking}
-There are two different forms of ergodicity breaking, these are split into strong and weak ergodicity breaking. We define strong ergodicity breaking with the requirements that all eigenstates are non-ergodic, that is that the system never thermalizes.
+There are two different forms of ergodicity breaking, these are split into strong and weak ergodicity breaking. We define strong ergodicity breaking with the requirements that all eigenstates are non-ergodic, that is that the entire system fails to thermalize. One potential explanation for this phenomena comes from the integrability of the system, where there are sufficiently many symmetries to reduce the dynamics to a 'solvable' system \citep{kinoshita_quantum_2006}. An alternative method of implementing strong ergodicity breaking comes from the many body localization, the quantum analogy of Anderson localization of the system which exhibits emergent integrability properties. This is possible with strong disorder all states should localize \citep{Guan_AndersonLocalization}. These systems contain an extensive set of possible conserved quantities leading to no level repulsion. In both cases the ability for an initial state to explore the full Hilbert space is reduced, leading to non ergodic dynamics.\citep{ALET_MBLrev} 
 \subsection{Weak Ergodicity Breaking}
-The weak ergodicity breaking on the other hand requires for the system to almost always thermalize, that is there exists a small subset of eigenstates which fail to thermalize. 
+The weak ergodicity breaking on the other hand requires for the system to almost always thermalize, that is there exists a small subset of eigenstates which fail to thermalize. This was realized on a 51 atom Rydberg system with kinetic constraints enforced by the PXP model \citep{bernien_probing_2017}. This experiment showed that for some specific initial states the relaxation to the thermal value was delayed and exhibited periodic revivals in contrast to what would be expected from the ETH . This result has then been compared to the classical chaos model of stadium billiards, which also exhibit non-thermal eigenstates known as 'scars' \cite{heller_bound-state_1984}, hence the non-thermal states in the Rydberg model became known as a 'quantum many-body scars'(QMBS) \cite{turner_quantum_2018}. \citep{keski-rahkonen_controllable_2017}
+\\
+This discovery incited research into different methods of weak ergodicity breaking.\cite{serbyn_quantum_2021}\\ 
 \section{Quantum Many Body Scars}
 
 \subsection{PXP Model}
@@ -38,7 +39,7 @@ This model is effectively represented by the Hamiltonian
 \hat{H} = \sum_i P_{i-1}X_iP_{i+1}
 \end{equation}
 
-Where $X_i$ is the Pauli X gate $\sigma^x_i = \ket{\circ}_i\bra{\bullet}_i+\ket{\bullet}_i\bra{\circ}_i$, and $P_i$ acts as a projector onto the groundstate $P_i = \ket{\circ}_i\bra{\circ}_i$. Hence the name PXP. These projectors enforce the rydberg blockade constraint on the system.  
+Where $X_i$ is the Pauli X gate $\sigma^x_i = \ket{\circ}_i\bra{\bullet}_i+\ket{\bullet}_i\bra{\circ}_i$, and $P_i$ acts as a projector onto the groundstate $P_i = \ket{\circ}_i\bra{\circ}_i$. Hence the name PXP. These projectors enforce the Rydberg blockade constraint on the system.  
 
 This constrained model has an interesting Hilbert Space. if we consider the simplest case with only two sites only the following sites are allowed $\ket{\circ \circ},\ket{\circ \bullet},\ket{\bullet \circ}$ since the $\ket{\bullet \bullet}$ is in violation of the Rydberg Blockade. From this it is apparent that the Hilbert Space cannot be represented as a tensor product state of the two separate Hilbert Spaces.
 The majority of states in the PXP model thermalize rapidly, however there are a handful of states that fail to thermalize, one of such states is the N\'eel state or $\mathbb{Z}_2 = \ket{1010101...}$. \cite{turner_quantum_2018-1, chen_dynamics_2022}
@@ -47,11 +48,11 @@ The majority of states in the PXP model thermalize rapidly, however there are a 
 
 Recently QMBS were discovered experimentally in a 2D array of superconducting qubits \citep{zhang_many-body_2022}, wherein an approximate Su-Schreiffver-Heeger (SSH) model \cite{su_solitons_1979} constructed by alternating the coupling strengths between pairs of qubits. Experimentally a chain of pairs of qubits was produced within a 6x6 lattice of superconducting qubits. These pairs of qubits form 'dimers' where the intra-dimer coupling $J_a$ is larger than the inter-dimer $J_e$ coupling between them. If the system is constructed such that $J_a$ is significantly larger than $J_e$ and the system is half filled, that is when there are $L/2$ photons, where $L$ is the length of the chain, then each dimer acts as an independent two level system with one photon per dimer. The control of the photons in this model shows similarities to how electrons transfer through the polyacetylene in the SSH model. \\
 
-Experimentally this model also has to consider the cross couplings between the qubits, the chosen physical layout of the dimers introduces a cross coupling term $J_x$, this cross coupling breaks the inegrability of the system and should allow the system to thermalize.
+Experimentally this model also has to consider the cross couplings between the qubits, the chosen physical layout of the dimers introduces a cross coupling term $J_x$, this cross coupling breaks the integrability of the system and should allow the system to thermalize.
 
 This system uses an XY model where finely tuned microwave pulses force rotations in the X and Y directions. This system shows different scarred states to the PXP model, in this model the states $\ket{\Pi}=\ket{D_+D_-D_+D_-...}$, $\ket{\Pi '}=\ket{D_-D_+D_-D_+...}$, where $\ket{D_-} = \ket{01}$ and $ \ket{D_+}=\ket{10}$ are found to have the non thermalizing dynamics expected of a QMBS. 
 
-This system is an effective spin 1/2 XY model with the following effective hamiltonian. 
+This system is an effective spin 1/2 XY model with the following effective Hamiltonian. 
 \begin{equation} \label{eq:eff_hamiltonian}
 \mathcal{H}_{eff} /\hbar \approx \sum_{<i,j>}J_{ij} (S^+_iS^-_j + S^-_iS^+_j) +\sum_i \Omega_i S^+_iS_i^-
 \end{equation}
@@ -71,4 +72,17 @@ The Su-Schriefer-Heeger model is based on the electron transfer in a polyacetayl
 
 \section{Entanglement}
 
+Entanglement plays a significant component in the field of quantum information, recently the idea of entanglement has  been applied to many-body dynamics as a method to better describe the dynamics of many-body systems. These theoretical advances have followed significant experimental advances. 
+
+If we assume that an ergodic eigenstate $\ket{a}$ behaves as predicted by the ETH, all local observables acting in a subsystem A will exhibit thermal expectation values. We impose this to the Von Neumann Entropy,
+\begin{equation}\label{eq:partialtrace}
+\rho_A = \tr_B \ket{a}\bra{a}
+\end{equation}
+where $\rho_A $ is the reduced density matrix of the subspace A. With this reduced density matrix we can calculate the Von Neumann entropy 
+\begin{equation}\label{VNE}
+S_{VN}(A) = -\tr \rho_A \log \rho_A =S_{Th}(A)
+\end{equation}
+ since the system follows the ETH the Von Neumann entanglement is equivalent to the thermodynamic entropy\cite{nandkishore_many-body_2015} \citep{nielsen_chuang_2010}. 
+This fact allows for us to find non ergodic states, we expect all thermal eigenstates to rapidly tend towards the page value. Non thermalizing states therefore are apparent by a delay to their entanglement growth \citep{abanin_colloquium_2019}.
 \subsection{Quantum Fisher Information}
+Most research on QMBS focus on the Von Neumann entropy a measure of bipartite entanglement, describing the correlation between two subspaces, this form of entanglement is not believed to offer any practical advantage for quantum computing and metrology. Instead the idea of multipartite entanglement is important since its known to have potential to improve quantum sensing \citep{pezze2014quantum}
